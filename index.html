@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Countdown Counter</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/"
+  }
+}
+</script>
+<style>
+      @media print {
+        /* Hide the main app, leave only the modal wrapper */
+        body > #root > div > *:not(.history-modal-wrapper) {
+          display: none !important;
+        }
+
+        /* Reset modal and its containers for printing */
+        .history-modal-wrapper,
+        .history-modal-content,
+        .history-modal-content > div {
+          display: block !important;
+          position: static !important;
+          overflow: visible !important;
+          height: auto !important;
+          max-height: none !important;
+        }
+
+        .history-modal-wrapper {
+          background: transparent !important;
+          backdrop-filter: none !important;
+          padding: 0 !important;
+        }
+
+        .history-modal-content {
+          box-shadow: none !important;
+          border: none !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          background: white !important;
+          color: black !important;
+        }
+
+        /* Hide modal header and non-selected items */
+        .modal-header,
+        ul > li:not(.selected-for-print) {
+          display: none !important;
+        }
+        
+        /* Style the selected item for printing */
+        li.selected-for-print {
+          page-break-inside: avoid; /* Prevent it from splitting across pages */
+        }
+        
+        li.selected-for-print * {
+          color: black !important;
+        }
+
+        /* Make cyan text a darker, more printable color */
+        li.selected-for-print .text-cyan-300 {
+            color: #005A6E !important; 
+        }
+      }
+    </style>
+</head>
+  <body class="bg-slate-900">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

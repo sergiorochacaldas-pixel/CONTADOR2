@@ -1,0 +1,5 @@
+{
+  "name": "CONTADOR DE CANTO OFICIAL",
+  "description": "A digital counter with a configurable countdown timer. Users can set a time, start the countdown, and register counts. The timer can be paused, which also disables the counting functionality.",
+  "requestFramePermissions": []
+}
